@@ -11,14 +11,16 @@ app.get('/api', (req, res) => {
     const track = req.query.track;
   
     const utcTime = new Date(Date.now()).toISOString();
-  
+    const utcTimeWithoutFraction = utcTime.split('.')[0] + 'Z';
+
+
     const githubFileUrl = `https://github.com/ahmusa118/hngprojects/blob/main/index.js`;
     const githubRepoUrl = `https://github.com/ahmusa118/hngprojects`;
   
     const response = {
       'slack_name': slackName,
       'current_day': daysOfTheWeek[today.getDay()],
-      'utc_time': utcTime,
+      'utc_time': utcTimeWithoutFraction,
       'track': track,
       'github_file_url': githubFileUrl,
       'github_repo_url': githubRepoUrl,
