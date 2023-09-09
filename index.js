@@ -3,7 +3,7 @@ const app=express()
 const cors=require('cors')
 app.use(cors())
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
     const today = new Date();
     const daysOfTheWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   
@@ -12,8 +12,8 @@ app.get('/', (req, res) => {
   
     const utcTime = new Date(Date.now()).toISOString();
   
-    const githubFileUrl = `https://github.com/username/repo/blob/main/file_name.ext`;
-    const githubRepoUrl = `https://github.com/username/repo`;
+    const githubFileUrl = `https://github.com/ahmusa118/hngprojects/blob/main/index.js`;
+    const githubRepoUrl = `https://github.com/ahmusa118/hngprojects`;
   
     const response = {
       'slack_name': slackName,
